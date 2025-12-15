@@ -23,10 +23,10 @@ const SupportChat = () => {
 
     const fetchData = async () => {
       try {
-        const faqRes = await axios.get("http://localhost:5000/chatbot/faqs");
+        const faqRes = await axios.get("https://farm-management-backend-v6ne.vercel.app/chatbot/faqs");
         setFaqs(faqRes.data);
 
-        const topicRes = await axios.get("http://localhost:5000/chatbot/topics");
+        const topicRes = await axios.get("https://farm-management-backend-v6ne.vercel.app/chatbot/topics");
         setTopics(topicRes.data);
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -46,7 +46,7 @@ const SupportChat = () => {
   const handleAsk = async () => {
     if (!question) return;
     try {
-      const res = await axios.post("http://localhost:5000/chatbot/ask", { message: question });
+      const res = await axios.post("https://farm-management-backend-v6ne.vercel.app/chatbot/ask", { message: question });
       setAnswer(res.data.reply);
     } catch (err) {
       console.error(err);

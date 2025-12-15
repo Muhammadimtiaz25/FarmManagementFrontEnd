@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/images/Picturelogo.png";
 import logo2 from "../assets/images/logo2.jpg";
 import axios from "axios";
 import { Link } from 'react-router-dom';
@@ -37,7 +36,7 @@ const Signup = () => {
       setLoading(true);
 
       
-      const res = await axios.post("http://localhost:5000/auth/register", {
+      const res = await axios.post("https://farm-management-backend-v6ne.vercel.app/auth/register", {
         username: formData.username,
         email: formData.email,
         password: formData.password,
@@ -45,8 +44,6 @@ const Signup = () => {
       });
 
       console.log("User registered:", res.data);
-      // console.log("User registered:", LoginRole);
-
     
        if (LoginRole === 'requestAdmin') {
         navigate('/login');

@@ -18,7 +18,7 @@ const Login = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/auth/login', {
+      const res = await axios.post('https://farm-management-backend-v6ne.vercel.app/auth/login', {
         username,
         password
       });

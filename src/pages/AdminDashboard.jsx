@@ -40,7 +40,7 @@ const AdminDashboard = () => {
 
 
 
-        const res = await axios.get("http://localhost:5000/auth/all");
+        const res = await axios.get("https://farm-management-backend-v6ne.vercel.app/auth/all");
 setUsers(res.data);
 
         
@@ -57,7 +57,7 @@ setUsers(res.data);
 
 const AddAdmin = async (id) => {
   try {
-    const res = await axios.patch(`http://localhost:5000/auth/approve-admin/${id}`);
+    const res = await axios.patch(`https://farm-management-backend-v6ne.vercel.app/auth/approve-admin/${id}`);
     alert(res.data.message);
 
     fetchData();
@@ -72,7 +72,7 @@ const AddAdmin = async (id) => {
   const RemoveAdmin = async (id) => {
      if (!window.confirm("Are you sure you want to delete this admin?")) return;
     try {
-      await axios.delete(`http://localhost:5000/auth/delete/${id}`);
+      await axios.delete(`https://farm-management-backend-v6ne.vercel.app/auth/delete/${id}`);
       setUsers((prev) => prev.filter((u) => u._id !== id)); // remove from state
       toast.success("Admin deleted successfully!");
     } catch (err) {
