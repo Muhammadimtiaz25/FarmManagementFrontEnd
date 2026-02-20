@@ -40,12 +40,6 @@ const RealTimeMonitor = () => {
         const newTime = `${parseInt(last.time) + 5}s`;
         const newBattery = Math.max(last.battery - Math.random() * 2, 0);
         const newChemical = Math.max(last.chemical - Math.random() * 3, 0);
-        // Simulate GPS movement
-        // setLocation((prevLoc) => ({
-        //   lat: prevLoc.lat + (Math.random() - 0.5) * 0.0005,
-        //   lng: prevLoc.lng + (Math.random() - 0.5) * 0.0005,
-        // }));
-           // Real data from Thinkspeak
         axios.get(`https://api.thingspeak.com/channels/3053112/feeds.json?api_key=${ThinkAPIKey}&results=2`)
         .then((response)=>{
             const channel = response.data.channel;
@@ -53,6 +47,7 @@ const RealTimeMonitor = () => {
       lat: parseFloat(channel.latitude),
       lng: parseFloat(channel.longitude)
     });
+    console.log("Fetched location:",channel);
         })
         .catch((error) => console.error("Error fetching data:", error));
 

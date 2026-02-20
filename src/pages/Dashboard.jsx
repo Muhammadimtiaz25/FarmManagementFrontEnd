@@ -17,7 +17,6 @@ const Dashboard = () => {
     const [robots, setRobots] = useState([]);
     const [farmers, setFarmers] = useState([]);
     const [engineers, setEngineers] = useState([]);
-  
     const [hiredEngineers, setHiredEngineers] = useState([]);
     const [hiredFarmers, setHiredFarmers] = useState([]);  // Fetch data from backend
     const [hiredRobots, setHiredRobots] = useState([]);  // Fetch data from backend
@@ -226,16 +225,6 @@ const removeRobot = async (id) => {
                  <p className="text-[#0d141c] text-[17px] font-bold">Go to My Robo Dashboard</p>
                 </div></Link>
                 <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold">Robots</p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold">Engineers</p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold">Rentals</p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold">Settings</p>
                 </div>
               </div>
             </div>
@@ -409,7 +398,7 @@ const removeRobot = async (id) => {
                   <div className="flex justify-between items-center">
                     <p className="font-medium">{robot.name}</p>
                     <p className={`text-sm font-bold ${getHealthColor(robot.health)} text-white px-2 rounded`}>
-                      {robot.health}%
+                      {robot.battery}%
                     </p>
                   </div>
                   <div className="w-full h-3 bg-gray-200 rounded overflow-hidden">

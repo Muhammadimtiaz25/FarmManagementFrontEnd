@@ -149,7 +149,7 @@ const SupportChat = () => {
             {topics.map((t, i) => (
               <div key={i} className="flex flex-col gap-3 rounded-lg border border-[#cedbe8] bg-slate-50 p-4">
                 <h2 className="text-base font-bold">{t.title}</h2>
-                <p className="text-sm text-[#49739c]">{t.desc}</p>
+                <p className="text-sm ">{t.desc}</p>
               </div>
             ))}
           </div>

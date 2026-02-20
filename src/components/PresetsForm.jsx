@@ -8,7 +8,7 @@ import L from "leaflet";
 export default function PresetsForm({ onSave, presets,farmerIdOrignal }) {
   const [country, setCountry] = useState("Pakistan");
   const [city, setCity] = useState("Lahore");
-  const [areaName, setAreaName] = useState("Tunnel Field");
+  const [areaName, setAreaName] = useState("Indoor Area1");
   const [location, setLocation] = useState({ lat: 32.21, lng: 74.3587 }); // Lahore default
 
   const [tunnels, setTunnels] = useState([]);
@@ -169,7 +169,7 @@ export default function PresetsForm({ onSave, presets,farmerIdOrignal }) {
 
   return (
    <div className="bg-white shadow-lg rounded-2xl p-6 transition hover:shadow-xl">
-  <h3 className="text-xl font-bold mb-4 text-gray-800"> Save Tunnels</h3>
+  <h3 className="text-xl font-bold mb-4 text-gray-800"> Save Indoor Areas</h3>
 
   <div className="space-y-4">
     <div>
@@ -236,13 +236,13 @@ export default function PresetsForm({ onSave, presets,farmerIdOrignal }) {
       onClick={savetunnelData}
       className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold shadow-md hover:opacity-90 transition"
     >
-      Save Tunnel
+      Save Area
     </button>
   </div>
 
   {tunnels.length > 0 && (
     <div className="mt-6">
-      <h4 className="font-semibold text-gray-700 mb-2">Saved Tunnels</h4>
+      <h4 className="font-semibold text-gray-700 mb-2">Saved Areas</h4>
       <ul className="space-y-2">
         {tunnels.filter((e) => e.ownerid === farmerIdOrignal).map((p) => (
           <li

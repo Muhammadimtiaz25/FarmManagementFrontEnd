@@ -10,6 +10,8 @@ import Agritecdashboard from "./pages/Agritecdashboard";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import SupportChat from "./pages/SupportChat";
+import AboutPage from "./pages/AboutPage";
+import Reviews from "./pages/Reviews";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -20,7 +22,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/reviews" element={<Reviews />} />
    
         <Route
           path="/AdminDashboard"

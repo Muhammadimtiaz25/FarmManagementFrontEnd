@@ -46,12 +46,7 @@ const Agritecdashboard = () => {
         const chemicalData = await getChemicalLevel();
         setChemical(chemicalData.value);
 
-        // just put api with api key
-        // axios.get("")
-        // .then((response)=>{
-        //   setThinkspeekData(response.data.feeds);})
-        // .catch((error) => console.error("Error fetching data:", error));
-      } catch (error) {
+     } catch (error) {
         console.error("API fetch error:", error);
       }
     };
@@ -163,24 +158,6 @@ const addRobot = async(id) => {
                 <p className="text-[17px] font-bold">Back to Main Dashboard</p>
 
                 </div></Link> 
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <p className="text-[17px] font-bold">Missions</p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <p className="text-[17px] font-bold cursor-pointer">
-                     <Link to="/">Robots</Link>
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <p className="text-[17px] font-bold cursor-pointer">
-                    <Link to="/supportchat">Support</Link>
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <p className="text-[17px] font-bold cursor-pointer">
-                  <Link to="/login">Account</Link>
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -209,43 +186,6 @@ const addRobot = async(id) => {
   <RealTimeMonitor />
 </div>
 
-{/* <div>
-      <h2 className="text-[#111418] text-[22px] font-bold px-4 pb-3 pt-5">
-       Robot Rental Plan
-      </h2>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(228px,1fr))] gap-2.5 px-4 py-3 @3xl:grid-cols-4">
-        {robots.filter((engineer) => engineer.ishired === false ) .map((plan) => (
-          <div
-            key={plan._id}
-            className="flex flex-1 flex-col gap-4 rounded-lg border border-solid border-[#dbe0e6] bg-white p-6"
-          >
-            <div className="flex flex-col gap-1">
-              <h1 className="text-[#111418] text-base font-bold leading-tight">
-                Per Month
-              </h1>
-              <p className="flex items-baseline gap-1 text-[#111418]">
-                <span className="text-[#111418] text-4xl font-black leading-tight">
-                  ${plan.rentPricePerMonth}
-                </span>
-                <span className="text-[#111418] text-base font-bold leading-tight">
-                  
-                </span>
-              </p>
-            </div>
-            <button
-              onClick={() => handleRent(plan)}
-              className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold"
-            >
-              Rent Now
-            </button>
-            <div className="flex flex-col gap-2">
-            Robot Name: {plan.name} 
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-            */}
             <div className="px-4">
       <h2 className="text-[22px] font-bold pb-3">Precision Spraying Details</h2>
 
@@ -310,7 +250,7 @@ const addRobot = async(id) => {
   features={[
     {
       title: "Mission Control",
-      desc: "Select presets or create a new robot mission in your 200x200 ft tunnel area.",
+      desc: "Select presets or create a new robot mission in your 50x50 ft indoor area.",
       component: (
         <div className="grid md:grid-cols-2 gap-6">
           <PresetsForm farmerIdOrignal={farmerIdOrignal} onSave={onSavePreset} presets={presets} />

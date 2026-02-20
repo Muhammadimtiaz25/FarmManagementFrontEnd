@@ -12,6 +12,7 @@ import api, {
 } from "../api";
 
 const AdminDashboard = () => {
+  const [activeSection, setActiveSection] = useState("dashboard");
   const [engineers, setEngineers] = useState([]);
   const [farmers, setFarmers] = useState([]);
   const [robots, setRobots] = useState([]);
@@ -268,33 +269,30 @@ const getStatusColor = (status) => {
                <Link to="/">   <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
                                  <p className="text-[#0d141c] text-[17px] font-bold">Go to home page</p>
                                 </div></Link>
-                <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4]">
-                  <p className="text-[#0d141c] text-[17px] font-bold">
+                <div onClick={() => setActiveSection("dashboard")} className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf4] cursor-pointer">
+                  <p   className="text-[#0d141c] text-[17px] font-bold ">
                     Dashboard
                   </p>
                 </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                <div onClick={() => setActiveSection("robots")} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg cursor-pointer  ">
                   <p className="text-[#0d141c] text-[17px] font-bold cursor-pointer">
-                    <Link to="/">Robots</Link>
+                    Robots
                     </p>
                 </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold cursor-pointer">
-                    <Link to="/Agritecdashboard">Engineers</Link>
+                <div onClick={() => setActiveSection("engineers")} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                  <p className="text-[#0d141c] text-[17px] font-bold ">
+                    Engineers
                    
                   </p>
                 </div>
-                <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold cursor-pointer">
-                    <Link to="/Agritecdashboard">Rentals</Link>
+                <div onClick={() => setActiveSection("farmers")} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+                  <p  className="text-[#0d141c] text-[17px] font-bold ">
+                  Farmers
                     
                   </p>
                 </div>
                 <div className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
-                  <p className="text-[#0d141c] text-[17px] font-bold">
-                    <Link to="/login">Account</Link>
-                    
-                  </p>
+                  
                 </div>
               </div>
             </div>
@@ -322,11 +320,10 @@ const getStatusColor = (status) => {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-            {/* Robots */}
-           {/* Robots */}
-{/* Robots */}
-{/* Robots */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">     
+{activeSection === "dashboard" && (
+  <>
+ {/* Robots */}
 <div className="flex flex-col gap-2 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
   <p className="text-base font-bold">Robots</p>
   <p className="text-2xl font-bold">{robots.filter((farmer) => farmer.ishired === false ).length}</p>
@@ -366,10 +363,6 @@ const getStatusColor = (status) => {
     )}
   </div>
 </div>
-
-
-
-            
 
             {/* Engineers */}
             <div className="flex flex-col gap-2 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
@@ -452,9 +445,7 @@ const getStatusColor = (status) => {
                 })}
               </div>
             </div>
-
-
-    {/* Admin Requests */}
+            {/* Admin Requests */}
             <div className="flex flex-col gap-4 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
               <p className="text-base font-bold">Admin Requests</p>
               {users.filter(user => user.role === "admin" || user.role === "requestAdmin").map((user) => (
@@ -522,6 +513,135 @@ const getStatusColor = (status) => {
                 </div>
               ))}
             </div>
+</>)}
+
+{/* Robots */}
+{activeSection === "robots" && (
+<div className="flex flex-col gap-2 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
+  <p className="text-base font-bold">Robots</p>
+  <p className="text-2xl font-bold">{robots.filter((farmer) => farmer.ishired === false ).length}</p>
+
+  {/* Add button */}
+  <input    value={robotName}
+            onChange={(e) => setRobotName(e.target.value)}
+            placeholder="Enter name for Robot" 
+            type="text" 
+            className="bg-green-600 text-white rounded hover:bg-green-700 text-sm" />
+  <button
+    onClick={addRobot}
+    className="mt-1 px-2 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm"
+  >
+    ➕ Add Robot
+  </button>
+
+  {/* Robot list */}
+  <div className="space-y-2 mt-2">
+    {robots.length === 0 ? (
+      <p className="text-gray-500 text-sm italic">No robots available</p>
+    ) : (
+      robots.filter((farmer) => farmer.ishired === false ).map((robot) => (
+        <div
+          key={robot._id}
+          className="flex justify-between items-center bg-gray-50 p-2 rounded"
+        >
+          <p className="text-sm font-medium">{robot.name}</p>
+          <button
+            onClick={() => removeRobot(robot._id)}
+            className="text-red-600 hover:text-red-800 cursor-pointer"
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
+      ))
+    )}
+  </div>
+</div>
+)}
+            {/* Engineers */}
+{activeSection === "engineers" && (
+            <div className="flex flex-col gap-2 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
+              <p className="text-base font-bold">Engineers</p>
+              <p className="text-2xl font-bold">{engineers.filter((farmer) => farmer.ishired === false ).length}</p>  
+              <input    
+            value={engineerName}
+            onChange={(e) => setEngineerName(e.target.value)}
+            placeholder="Enter name for Robot" 
+            type="text" 
+            className="bg-green-600 text-white rounded hover:bg-green-700 text-sm" />
+              <button
+                onClick={addEngineer}
+                className="mt-1 px-2 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm"
+              >
+                ➕ Add Engineer
+              </button>
+              <div className="space-y-2 mt-2">
+                {engineers.filter((farmer) => farmer.ishired === false ) .map((engineer) => (
+                  <div
+                    key={engineer._id}
+                    className="flex justify-between items-center bg-gray-50 p-2 rounded"
+                  >
+                    <p className="text-sm font-medium">{engineer.name}</p>
+                    <button
+                      onClick={() => removeEngineer(engineer._id)}
+                      className="text-red-600 hover:text-red-800 cursor-pointer"
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+)}
+            {/* Farmers */}
+{activeSection === "farmers" && (
+            <div className="flex flex-col gap-2 rounded-lg p-4 border border-[#cedbe8] bg-white shadow h-[300px] overflow-y-auto overflow-x-hidden">
+              <p className="text-base font-bold">Farmers</p>
+              <p className="text-2xl font-bold">{farmers.filter((farmer) => farmer.ishired === false ).length}</p>
+             <input    
+            value={farmerName}
+            onChange={(e) => setFarmerName(e.target.value)}
+            placeholder="Enter name for Robot" 
+            type="text" 
+            className="bg-green-600 text-white rounded hover:bg-green-700 text-sm" />
+             
+              <button
+                onClick={addFarmer}
+                className="mt-1 px-2 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm"
+              >
+                ➕ Add Farmer
+              </button>
+              <div className="space-y-2 mt-2">
+                {farmers.filter((farmer) => farmer.ishired === false ).map((farmer) => {
+                  const status = farmer.priceStatus
+                    ? farmer.priceStatus.toUpperCase()
+                    : "N/A";
+                  return (
+                    <div
+                      key={farmer._id}
+                      className="flex justify-between items-center bg-gray-50 p-2 rounded"
+                    >
+                      <p
+                        className={`text-sm font-medium ${
+                          farmer.priceStatus === "pending"
+                            ? "text-red-600"
+                            : "text-green-600"
+                        }`}
+                      >
+                        {farmer.name} - {status}
+                      </p>
+                      <button
+                        onClick={() => removeFarmer(farmer._id)}
+                        className="text-red-600 hover:text-red-800 cursor-pointer"
+                      >
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+)}
+    
           </div>
 
           {/* Robot Health & Status */}

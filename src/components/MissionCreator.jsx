@@ -91,7 +91,7 @@ export default function MissionCreator({ farmerId, farmerIdOrignal }) {
 
       {/* STARTING TUNNEL */}
       <div className="flex flex-col gap-4 px-4 py-3">
-        <label htmlFor="startingTunnel">Choose tunnel for robot:</label>
+        <label htmlFor="startingTunnel">Choose Indoor area for robot:</label>
         <select
           id="startingTunnel"
           name="startingTunnel"
@@ -99,7 +99,7 @@ export default function MissionCreator({ farmerId, farmerIdOrignal }) {
           onChange={handleStartingChange}
           className="form-input w-full rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] h-12 sm:h-14 p-3 sm:p-4 text-sm sm:text-base"
         >
-          <option value="">Select a tunnel</option>
+          <option value="">Select a Area</option>
           {farmerTunnels.map((tunnel) => (
             <option key={tunnel._id} value={tunnel._id}>
               {tunnel.country} - {tunnel.city} - {tunnel.area}
@@ -111,24 +111,7 @@ export default function MissionCreator({ farmerId, farmerIdOrignal }) {
 </div>
 
 <div>
-   {/* ENDING TUNNEL
-      <div className="flex flex-col gap-4 px-4 py-3">
-        <label htmlFor="endingTunnel">Choose ending tunnel:</label>
-        <select
-          id="endingTunnel"
-          name="endingTunnel"
-          value={endingTunnel?._id || ""}
-          onChange={handleEndingChange}
-          className="form-input w-full rounded-lg text-[#0d141c] focus:outline-0 focus:ring-0 border-none bg-[#e7edf4] h-12 sm:h-14 p-3 sm:p-4 text-sm sm:text-base"
-        >
-          <option value="">Select a tunnel</option>
-          {farmerTunnels.map((tunnel) => (
-            <option key={tunnel._id} value={tunnel._id}>
-              {tunnel.country} - {tunnel.city} - {tunnel.area}
-            </option>
-          ))}
-        </select>
-      </div> */}
+   
 </div>
 
   <button
@@ -141,7 +124,7 @@ export default function MissionCreator({ farmerId, farmerIdOrignal }) {
 
  {missions.length > 0 && (
     <div className="mt-6">
-      <h4 className="font-semibold text-gray-700 mb-2">Robot going in these tunnels</h4>
+      <h4 className="font-semibold text-gray-700 mb-2">Robot going in these areas</h4>
       <ul className="space-y-2">
         {missions.filter((e) => e.ownerid === farmerIdOrignal).map((p) => (
           <li

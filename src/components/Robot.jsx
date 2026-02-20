@@ -1,4 +1,6 @@
 import React from "react";
+import f11 from "../assets/images/f11.jpg";
+import f12 from "../assets/images/f12.jpg";
 
 const SeedingSVG = () => (
   <svg
@@ -89,8 +91,8 @@ const Section = ({ title, features }) => {
 const Robot = () => {
   const robots = [
     {
-      title: "Seeding Robot",
-      desc: "High-precision sowing with minimal wastage.",
+      title: "Watering Robot",
+      desc: "High-precision watering with minimal wastage.",
       Icon: SeedingSVG,
     },
     {
@@ -124,7 +126,6 @@ const Robot = () => {
     <section id="robots" className="bg-white py-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-10">
-          <p className="text-[17px] font-bold text-orange-400">Our Robots</p>
           <h2 className="text-3xl font-bold text-green-800">
             Meet Our Agricultural Robots
           </h2>
@@ -149,23 +150,7 @@ const Robot = () => {
         </div>
       </div>
 
-      <Section
-        title="Robot Features"
-        features={[
-          {
-            subtitle: "Precision Spraying",
-            title: "Advanced Nozzle Control",
-            desc: "Our robots use advanced nozzle control technology to ensure precise and efficient spraying.",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDSof2Gwo5mDZH1I6Kc5beEw-z85k1FCMNGymFr8kcUzQSZyZy0NoTX2HQquKA3Ob8ih_OTiplee43r9SKbtBhjrCrO1dZCUCMBJxxRBxIQuZqLZVvGhaw4o7olU7HCrfDbUK2MIpAgmb2Ml4QYQVHH97vQN8R_f64mr81t_ji6V8Qhzbq1eKbIxIAscqabWMBQc0dRnt1pA9pD-OTbWrrscDdnk1wzDdyWbREm3xJOVPMgsSVOEgrvxS8z3RZUz3FMa-3YLE5bwlPR",
-          },
-          {
-            subtitle: "Autonomous Navigation",
-            title: "GPS-Guided Precision",
-            desc: "Equipped with GPS-guided navigation, our robots autonomously navigate fields with accuracy.",
-            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAy-eqUAHpr4qWimtoaVpMk0mfL1KWxLL0vRiNHsISAzTe2NTgrGS4fSvwS03RL9EkFtmUWny0mOllKZZZ-dt-00zp4D-nr3PkDjdlP8JoCLcOYl33JtMzs6YmRFIAysnOlq_vf3WnocVUkTSAsVGp5MrQuctM2EZTnU0nlC5Pa1dhTlxiaw1e-xlW52s9B_bq617RZ4iaB5Jxy8N90wbF6PryNZ5cmnTH5g-bmzzukxyn6i1FwZFVmZJrmJeY1V4DLR3RgSHR_Hy1p",
-          },
-        ]}
-      />
+     
     </section>
   );
 };
