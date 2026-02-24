@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo2 from "../assets/images/logo2.jpg";
 import greenPath from "../assets/images/pathway-though-green-field.jpg";
-import Dot2 from "../assets/images/dot2.png";
+import Dot2 from "../assets/images/dot2.jpeg";
 import Icon1 from "../assets/images/icon1.png";
 import Icon2 from "../assets/images/icon2.png";
-import Left from "../assets/images/left.png";
+import Left from "../assets/images/left2.jpeg";
 import Section from '../components/Section';
 import Testimonial from "../assets/images/testimonial.png";
 import Blog2 from "../assets/images/blog2.png";
@@ -26,7 +26,7 @@ const Home = () => {
   
   return (
     
-  <div className="bg-white  max-w-full overflow-x-hidden font-roboto mx-5">
+  <div className="bg-white  max-w-full overflow-x-hidden font-roboto ">
    
   <header className="bg-white shadow-md fixed w-full z-50">
   <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-3 md:px-8">
@@ -99,7 +99,7 @@ const Home = () => {
       <div className="centeredhero mt-10 md:mt-0">
         <p className='text-xl font-[1000] text-green-700 '>WELCOME TO AGRIBOT FAMILY</p>
         <h1 className='text-6xl m-6 font-[1000]'>Indoor Farming</h1>
-        <p className='text-lg font-[1000] '>Farm smarter,not Harder.Hire robot as a service for a Moderen Farming.</p>
+        <p className='text-lg font-[1000] '>Farm smarter, not Harder.Hire robot as a service for a Moderen Farming.</p>
       <Link to="/about"><button className='bg-green-700 p-3 mt-5 rounded-lg'>Discover More</button></Link>
       </div>
     </div>
@@ -117,7 +117,7 @@ const Home = () => {
           <img
             src={features2}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -132,7 +132,7 @@ const Home = () => {
           <img
             src={Dot2}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -147,7 +147,7 @@ const Home = () => {
           <img
             src={features1}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 sm:h-32 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -162,7 +162,7 @@ const Home = () => {
           <img
             src={f13}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -177,7 +177,7 @@ const Home = () => {
           <img
             src={f11}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -192,7 +192,7 @@ const Home = () => {
           <img
             src={f12}
             alt=""
-            className="w-24 sm:w-32 h-24 sm:h-32 object-cover rounded-lg shadow-md"
+            className="w-50 sm:w-50 h-50 sm:h-40 object-cover rounded-lg shadow-md"
           />
         </div>
       </div>
@@ -208,28 +208,24 @@ const Home = () => {
         <img
           src={Left}
           alt="Farm"
-          className="w-full max-w-sm sm:max-w-md lg:max-w-lg object-cover rounded-lg"
+          className="w-120 h-100 max-w-sm sm:max-w-md lg:max-w-lg object-cover rounded-lg"
         />
       </div>
       <div className="md:w-1/3" data-aos="fade-left">
-        <p className="text-[17px] font-semibold text-orange-400">Our Introduction</p>
         <h2 className="text-3xl font-bold text-black">
           Agriculture Farm Automation
         </h2>
-        <p className="mt-4 text-green-600">
-          AgriBot is the advance global agricultural robot for Indoor farms.
-        </p>
-        <p className="mt-4 text-sm">
-       AgriBot is an advanced global agricultural robotics solution designed specifically for indoor and smart farming. Our intelligent robots help farmers increase productivity, reduce resource waste, and achieve sustainable food production through automation and precision technology.
-        </p>
-        <div className="mt-6 flex flex-col sm:flex-row items-center gap-5">
-          <div className="flex items-center gap-2">
+       
+        <p className="mt-4 text-sm text-left">
+      Our Indoor Farming Robot is a cutting-edge solution designed to enhance crop management in greenhouses by combining advanced sensors, AI-driven autonomy, and real-time data monitoring. Equipped with LiDAR and multi-spectral cameras, the robot autonomously inspects, waters, and maintains crops like lettuce with precision, ensuring optimal conditions for growth. Through an intuitive dashboard, farmers can track real-time metrics such as soil moisture, temperature, and light levels, all while the robot operates 24/7 with minimal human intervention.   </p>
+        <div className="mt-6 flex flex-col sm:flex-row  gap-5">
+          <div className="flex items-center  gap-2">
             <img
               src={Icon1}
               alt="Farm"
               className="w-12 h-12 object-cover rounded-lg"
             />
-            <h1 className="text-lg font-semibold">Precision spraying</h1>
+            <h1 className="text-lg font-semibold">Farm Digitalization</h1>
           </div>
           <div className="flex items-center gap-2">
             <img
@@ -237,7 +233,7 @@ const Home = () => {
               alt="Farm"
               className="w-12 h-12 object-cover rounded-lg"
             />
-            <h1 className="text-lg font-semibold">Moderen solution</h1>
+            <h1 className="text-lg font-semibold">Modern Solution</h1>
           </div>
         </div>
         <Link to="/about">
@@ -256,7 +252,7 @@ const Home = () => {
     >
     </div>
    
-    <section className="py-16">
+    {/* <section className="py-16">
       <div
         className="container mx-auto md:px-8 flex flex-col md:flex-row items-center justify-center gap-10"
       >
@@ -268,8 +264,7 @@ const Home = () => {
           />
         </div>
         <div className="md:w-1/3" data-aos="fade-left">
-          <p className="text-[17px] font-bold text-orange-400">Our Farm Benefits</p>
-          <h2 className="text-3xl font-bold">Why Choose Us Agribot Market</h2>
+          <h2 className="text-3xl font-bold">Why Choose Agribot </h2>
           <p className="text-sm">
             There are many variations of passages of available but the majortity
             have sufferred alteration in some form by injected humor or random
@@ -277,20 +272,11 @@ const Home = () => {
           </p>
           <ul className="mt-4 space-y-2 text-gray-600">
             <li>✔ To Increase Food Availability</li>
-            <p className="text-sm">
-              There are variation You need to be sure there is anything hidden
-              in the middle of text.
-            </p>
+            
             <li>✔ Professional Engineers</li>
-            <p className="text-sm">
-              There are variation You need to be sure there is anything hidden
-              in the middle of text.
-            </p>
-            <li>✔ Quality Robot</li>
-            <p className="text-sm">
-              There are variation You need to be sure there is anything hidden
-              in the middle of text.
-            </p>
+           
+            <li>✔ Quality Robots</li>
+           
           </ul>
         <Link to="/reviews">
             <a
@@ -298,7 +284,7 @@ const Home = () => {
               >More</a></Link>
         </div>
       </div>
-    </section>
+    </section> */}
 
   
 
@@ -309,9 +295,8 @@ const Home = () => {
           className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           <div>
-            <p className="mb-4">
-            Agribot is an advanced global agricultural robotics solution designed specifically for indoor and smart farming. Our intelligent robots help farmers increase productivity, reduce resource waste, and achieve sustainable food production through automation and precision technology.
-            </p>
+            <p className="mb-4 text-left">
+          The Bulldog is an autonomous agricultural robot designed for indoor and smart farming solutions. Our intelligent robots empower farmers to boost productivity, minimize resource waste, and achieve sustainable production goals through automation and precision technology.  </p>
             <div className="flex space-x-4 text-yellow-400 text-xl">
               <a href="#"><i className="fab fa-instagram"></i></a>
               <a href="#"><i className="fab fa-twitter"></i></a>
@@ -346,7 +331,7 @@ const Home = () => {
               <p className="text-gray-400 text-sm">July 5 2022</p>
             </div>
             <div>
-              <p>Now people can grow crops in indoor farms with minimal effort.</p>
+              <p>Now people can grow crops in indoor farms with minimal effort</p>
               <p className="text-gray-400 text-sm">August 12 2022</p>
             </div>
           </div>
