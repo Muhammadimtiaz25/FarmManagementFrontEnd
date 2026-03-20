@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: './FarmManagementFrontEnd',
+  base: process.env.VITE_BASE_URL || './FarmManagementFrontEnd',
 })

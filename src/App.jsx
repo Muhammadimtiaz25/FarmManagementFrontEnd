@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Analytics } from '@vercel/analytics/react';
 
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -17,6 +18,7 @@ import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
+    <div>
     <Router>
       <Routes>
         <Route index element={<Home />} />
@@ -54,9 +56,14 @@ function App() {
         />
         <Route path="/supportchat" element={<SupportChat />} />
       </Routes>
+      
 
       <ToastContainer position="top-right" autoClose={3000} />
     </Router>
+    {/* This component won't render anything visible, 
+          but it starts the tracking script */}
+      <Analytics />
+    </div>
   );
 }
 

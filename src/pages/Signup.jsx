@@ -48,7 +48,7 @@ const Signup = () => {
        if (LoginRole === 'requestAdmin') {
         navigate('/login');
       } else if (LoginRole === 'farmer') {
-        navigate('/Dashboard');
+        navigate('/login');
       } else {
         setError('Unknown user role');
       }
