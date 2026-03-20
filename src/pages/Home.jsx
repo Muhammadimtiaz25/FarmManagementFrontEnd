@@ -18,8 +18,6 @@ import f13 from "../assets/images/f13.jpg";
 import f14 from "../assets/images/f14.jpg";
 import f15 from "../assets/images/f15.jpg";
 import Robot from "../components/Robot";
-import f16 from "../assets/images/splitScreen.mp4";
-import { set } from 'mongoose';
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("");
