@@ -45,13 +45,13 @@ const Signup = () => {
 
       console.log("User registered:", res.data);
     
-       if (LoginRole === 'requestAdmin') {
-        navigate('/login');
-      } else if (LoginRole === 'farmer') {
-        navigate('/login');
-      } else {
-        setError('Unknown user role');
-      }
+      //  if (LoginRole === 'requestAdmin') {
+      //   navigate('/login');
+      // } else if (LoginRole === 'farmer') {
+      //   navigate('/login');
+      // } else {
+      //   setError('Unknown user role');
+      // }
     } catch (err) {
       console.error("Signup error:", err.response?.data || err.message);
       setError(err.response?.data?.error || "Something went wrong");
